@@ -1,7 +1,9 @@
-@(message: String)
+@(sessionInfo: String)
 
-@main("Welcome to Play") {
-
-    @play20.welcome(message)
-
+@main("Play ESI Test") {
+    <h1>Play ESI Test</h1>
+    <p><a href="@routes.Application.setCookie()">Click here to set session info</a></p>
+    <esi:remove><p>This should be removed.</p></esi:remove>
+    <p>Info from session is "@sessionInfo"</p>
+    <esi:include src="@routes.Application.esiSnippet()"/>
 }
