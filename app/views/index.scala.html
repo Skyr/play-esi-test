@@ -1,9 +1,12 @@
-@(sessionInfo: String)
+@(sessionInfo: String, snippet: String)
 
 @main("Play ESI Test") {
     <h1>Play ESI Test</h1>
     <p><a href="@routes.Application.setCookie()">Click here to set session info</a></p>
-    <esi:remove><p>This should be removed.</p></esi:remove>
     <p>Info from session is "@sessionInfo"</p>
+    <h2>Data from ESI</h2>
+    <esi:remove><p>This should be removed.</p></esi:remove>
     <esi:include src="@routes.Application.esiSnippet()"/>
+    <h2>Data from self-call via WS</h2>
+    @Html(snippet)
 }
