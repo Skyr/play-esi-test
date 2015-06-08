@@ -1,4 +1,4 @@
-@(sessionInfo: String, snippet: String)
+@(headers: Map[String,String], sessionInfo: String, snippet: String)
 
 @main("Play ESI Test") {
     <h1>Play ESI Test</h1>
@@ -9,4 +9,10 @@
     <esi:include src="@routes.Application.esiSnippet()"/>
     <h2>Data from self-call via WS</h2>
     @Html(snippet)
+    <h2>Headers in main request</h2>
+    <ul>
+        @headers.map { case (k, v) =>
+          <li>@k: @v</li>
+        }
+    </ul>
 }

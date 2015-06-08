@@ -17,7 +17,7 @@ class Application @Inject() (ws: WSClient) extends Controller {
     val headers = request.headers.headers
     val snippet = ws.url(routes.Application.esiSnippet().absoluteURL()).withHeaders(headers:_*)
     snippet.get().map { resp =>
-      Ok(views.html.index(sessionInfo, resp.body))
+      Ok(views.html.index(request.headers.headers.toMap, sessionInfo, resp.body))
     }
   }
 
