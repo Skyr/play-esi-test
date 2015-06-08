@@ -1,0 +1,6 @@
+= Play ESI experiments
+
+Experiments using https://de.wikipedia.org/wiki/Edge_Side_Includes[ESIs]
+in https://playframework.com/[Play!Framework].
+Includes a https://www.varnish-cache.org/[Varnish 4] test config plus start script.
+
